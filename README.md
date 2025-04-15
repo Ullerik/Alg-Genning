@@ -185,7 +185,7 @@ This means the setup function will take more time to run, but in turn the generi
                    string_alg = False)
 ```
 To solve a case, use this function, where *search_algs* and *table* is generated from the function above.
-*scramble" is any scramble of your choosing, and cubestate needs to be the same as the cubestate you used in *generic_solver_setup*.
+*scramble* is any scramble of your choosing, and *cubestate* needs to be the same as the cubestate you used in *generic_solver_setup*.
 
 
 # Note!
