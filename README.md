@@ -195,6 +195,13 @@ For example, you may use it to find stats, in which case you can set it to False
 Then finding the movecount can be done by taking the length of the solution directly.
 If *solve_CP = True*, it will only accept solutions where the DL corners are in the correct positions and the rest of the corners can be solved with only R and U moves.
 
+## custom_cube_maker.py
+This is a small thing I made to easier define cubestates.
+You can run it in any terminal.
+A GUI will open where you can select colors and color the cube.
+When you press "Done", the GUI will close and a text will show in the terminal which you can copy paste as your cubestate.
+Remember to be consistent: I recommend green front, red right, blue back, orange left, white top, and yellow bottom.
+Leave stickers you want to as 0 to be gray.
 
 # Note!
 Keep in mind, there are still a lot of improvements that can be made to this program in terms of speed.
