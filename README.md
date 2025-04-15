@@ -166,7 +166,7 @@ generic_solver is a solver that can be used to solve any state, but it requires 
                          move_transition=move_transition, 
                          allowed_moves = np.full(45, 10, dtype=np.int8), 
                          start_grips=np.array([1]), 
-                         skip_U=True, 
+                         skip_U=False, 
                          prnt=True)
 ```
 This function returns *search_algs* and *table*.
@@ -175,6 +175,7 @@ However, in this case you should choose a cubestate where the pieces you don't c
 For example, if you want a cross-solver, you should set LL and all pairs to 0.
 I also recommend setting *search_depth* as low as possible and *table_depth* as high as possible.
 This means the setup function will take more time to run, but in turn the generic_solver will be much faster.
+*skip_U* means the algs won't start nor end with any U move.
 
 
 ```
@@ -182,10 +183,15 @@ This means the setup function will take more time to run, but in turn the generi
                    cubestate, 
                    search_algs, 
                    table, 
-                   string_alg = False)
+                   string_alg = True)
 ```
 To solve a case, use this function, where *search_algs* and *table* is generated from the function above.
 *scramble* is any scramble of your choosing, and *cubestate* needs to be the same as the cubestate you used in *generic_solver_setup*.
+*string_alg = True* means you get an alg in a text format, such as *R U R' U'*.
+If this is set to False, the same alg will be set to *[0, 15, 2, 17]* (the move index version of the same alg).
+This may be useful if you don't care about the exact solutions.
+For example, you may use it to find stats, in which case you can set it to False.
+Then finding the movecount can be done by taking the length of the solution directly.
 
 
 # Note!
