@@ -183,7 +183,8 @@ This means the setup function will take more time to run, but in turn the generi
                    cubestate, 
                    search_algs, 
                    table, 
-                   string_alg = True)
+                   string_alg = True,
+                   solve_CP = False)
 ```
 To solve a case, use this function, where *search_algs* and *table* is generated from the function above.
 *scramble* is any scramble of your choosing, and *cubestate* needs to be the same as the cubestate you used in *generic_solver_setup*.
@@ -192,6 +193,7 @@ If this is set to False, the same alg will be set to *[0, 15, 2, 17]* (the move 
 This may be useful if you don't care about the exact solutions.
 For example, you may use it to find stats, in which case you can set it to False.
 Then finding the movecount can be done by taking the length of the solution directly.
+If solve_CP = True, it will only accept solutions where the DL corners are in the correct positions and the rest of the corners can be solved with only R and U moves.
 
 
 # Note!
@@ -199,4 +201,3 @@ Keep in mind, there are still a lot of improvements that can be made to this pro
 
 # TODO!
 * Add setup moves to "scrambled" and "solved" cubestate. This allows searching for WV algs for example
-* Add support for solving into 2gen
