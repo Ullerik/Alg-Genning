@@ -193,7 +193,7 @@ If this is set to False, the same alg will be set to *[0, 15, 2, 17]* (the move 
 This may be useful if you don't care about the exact solutions.
 For example, you may use it to find stats, in which case you can set it to False.
 Then finding the movecount can be done by taking the length of the solution directly.
-If *solve_CP = True*, it will only accept solutions where the DL corners are in the correct positions and the rest of the corners can be solved with only R and U moves.
+If *solve_CP = True*, it will only accept solutions where the DL corners are in the correct positions and the rest of the corners can be permuted with only R and U moves.
 
 
 # Note!
